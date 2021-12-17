@@ -6,60 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamique des Connaissances</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css') }}">  
 </head>
 <body>
-    <table border="1px">
-        <tr>
-            <th></th>
+  <div>
+    <a href="/" class="previous">&laquo; Retour</a>
+  </div>
+    <table class="table">
+        <tr class="table-header">
+            <th style="visibility: hidden;" ></th>
             <th>Cas source</th>
-            <th>Pois</th>
-            <th>Cas cible</th>
+            <th>Cas ciblé</th>
         </tr>
         <tbody>
-          <tr>
-            <th scope="row">Arrondissment</th>
-            <td>{{similar.arrondissment}}</td>
-            <td>Important</td>
-            <td>{{test.arrondissment}}</td>
+          <tr class="table-row">
+            <th scope="row">Arrondissement</th>
+            <td>{{arrond[similar.arrondissment]}}</td>
+            <td>{{arrond[test.arrondissment]}}</td>
           </tr>
-          <tr>
-            <th scope="row">Superficie</th>
-            <td>{{similar.superficie}}</td>  
-            <td>d</td>  
-            <td>{{test.superficie}}</td>  
+          <tr class="table-row">
+            <th scope="row">Superficie (<var>m<sup>2</sup></var>)</th>
+            <td>{{similar.superficie}} <var>m<sup>2</sup></var></td>   
+            <td>{{test.superficie}} <var>m<sup>2</sup></var></td>  
           </tr>
-          <tr>
-            <th scope="row">Chambres</th>
-            <td>{{similar.nbr_chambre}}</td>  
-            <td>d</td>  
-            <td>{{test.nbr_chambre}}</td>  
+          <tr class="table-row">
+            <th scope="row">Nombre de chambres</th>
+            <td>{{int(similar.nbr_chambre)}}</td>  
+            <td>{{int(test.nbr_chambre)}}</td>  
           </tr>
-          <tr>
-            <th scope="row">Piece</th>
-            <td>{{similar.nbr_p}}</td>  
-            <td>d</td>  
-            <td>{{test.nbr_p}}</td>  
+          <tr class="table-row">
+            <th scope="row">Nombre de pièces</th>
+            <td>{{int(similar.nbr_p)}}</td>    
+            <td>{{int(test.nbr_p)}}</td>  
           </tr>
-          <tr>
-            <th scope="row">Etage</th>
-            <td>{{similar.etage}}</td>  
-            <td>d</td>  
-            <td>{{test.etage}}</td>  
+          <tr class="table-row">
+            <th scope="row">Étage</th>
+            <td>{{int(similar.etage)}}</td>    
+            <td>{{int(test.etage)}}</td>  
           </tr>
-          <tr>
+          <tr class="table-row">
             <th scope="row">Standing</th>
-            <td>{{similar.standing}}</td>  
-            <td>d</td>  
-            <td>{{test.standing}}</td>  
+            <td>{{standing(similar.standing)}}</td>    
+            <td>{{standing(test.standing)}}</td>  
           </tr>
-          <tr>
-            <th scope="row" span=3></th>  
-          </tr>
-          <tr>
-            <th scope="row">Prix</th>
-            <td>{{similar.prix}}</td>  
-            <td>d</td>  
-            <td>{{price}}</td>  
+          <tr class="table-row" style="font-weight: bold;">
+            <th scope="row">Prix (€)</th>
+            <td style="color: #001fff;">{{similar.prix}} €</td>   
+            <td style="color: #001fff;">{{price}} €</td>  
           </tr>
         </tbody>
       </table>

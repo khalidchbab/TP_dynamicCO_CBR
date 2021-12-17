@@ -6,17 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamique des Connaissances</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css') }}">
 </head>
 <body>
+    <div class="title">
+        <h1>Estimation immobilière gratuite en ligne <br> (Raisonnement à partir de cas)</h1>
+    </div>
+    <div class="card">
     <form action="/estimate" method = "POST">
-        <p>Arrondissment <input type = "text" name = "Arrondissment" /></p>
-        <p>Superficie <input type = "text" name = "Superficie" /></p>
-        <p>Chambres <input type = "text" name = "Chambres" /></p>
-        <p>Piece <input type = "text" name = "Piece" /></p>
-        <p>Etage <input type = "text" name = "Etage" /></p>
-        <p>Standing <input type = "text" name = "Standing" /></p>
+        <label>Arrondissement</label>
+        <select name="Arrondissment">
+            <option value="69001">Lyon 1er Arrondissement</option>
+            <option value="69002">Lyon 2e Arrondissement</option>
+            <option value="69003">Lyon 3e Arrondissement</option>
+            <option value="69004">Lyon 4e Arrondissement</option>
+            <option value="69005">Lyon 5e Arrondissement</option>
+            <option value="69006">Lyon 6e Arrondissement</option>
+            <option value="69007">Lyon 7e Arrondissement</option>
+            <option value="69008">Lyon 8e Arrondissement</option>
+            <option value="69009">Lyon 9e Arrondissement</option>
+            </select>
+        <label>Superficie</label>
+        <input type = "text" name = "Superficie" placeholder="Superficie" required/>
+        <label>Nombre de chambres</label>
+        <input type = "text" name = "Chambres" placeholder="Nombre de chambres" required/>
+        <label>Nombre de pièces</label>
+        <input type = "text" name = "Piece" placeholder="Nombre de pieces" required/>
+        <label>Étage</label>
+        <input type = "text" name = "Etage" placeholder="Etage" required/>
+        <label>Standing</label>
+        <select name="Standing">
+            <option value="3">Haut standing (type A)</option>
+            <option value="2">Moyen standing (type B)</option>
+            <option value="1">Logement ordinaire (type C)</option>
+        </select>
         <p><input type = "submit" value = "Estimer" /></p>
     </form>
+</div>
 </body> 
-
 </html>

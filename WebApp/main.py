@@ -8,6 +8,9 @@ import time
 import os
 from flask import current_app as app
 
+arrond = {69001:"Lyon 1er Arrondissement",69002:"Lyon 2e Arrondissement",69003:"Lyon 3e Arrondissement",
+69004:"Lyon 4e Arrondissement",69005:"Lyon 5e Arrondissement",69006:"Lyon 6e Arrondissement",69007:"Lyon 7e Arrondissement",69008:"Lyon 8e Arrondissement",69009:"Lyon 9e Arrondissement"}
+
 def addapt(rem:pd.core.series.Series, t:pd.core.series.Series):
     arr_cls = [69006,69002,69004,69001,69003,69007,69008,69009,69005]
     delta_standing = (rem.standing - t.standing) * 50000
@@ -88,5 +91,13 @@ def index():
         suggested_price, difference_between = addapt(most_similar,test)
         print(suggested_price)
 
-    return render_template("estimate.html",price=suggested_price, test=test, similar = most_similar)
+    return render_template("estimate.html",price=suggested_price, test=test, similar = most_similar, 
+    standing=standing, arrond=arrond,int=int)
+
+def standing(v):
+    if v==3: 
+        return "Haut standing"
+    elif v==2:
+        return "Moyen standing"
+    return "Logement ordinaire"
 
