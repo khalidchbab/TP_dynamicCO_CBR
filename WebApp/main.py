@@ -8,6 +8,7 @@ import time
 import os
 from flask import current_app as app
 
+
 arrond = {69001:"Lyon 1er Arrondissement",69002:"Lyon 2e Arrondissement",69003:"Lyon 3e Arrondissement",
 69004:"Lyon 4e Arrondissement",69005:"Lyon 5e Arrondissement",69006:"Lyon 6e Arrondissement",69007:"Lyon 7e Arrondissement",69008:"Lyon 8e Arrondissement",69009:"Lyon 9e Arrondissement"}
 

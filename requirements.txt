@@ -1,0 +1,4 @@
+python-dotenv==0.19.1
+Flask
+pandas==1.2.4
+numpy==1.24.0
